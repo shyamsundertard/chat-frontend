@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-const BE_BASE_URL = process.env.BE_BASE_URL;
+const BACKEND_URL = process.env.BACKEND_URL;
 
 export async function POST(req: Request) {
     try {
@@ -8,14 +8,16 @@ export async function POST(req: Request) {
 
         if (!name || !email || !password) {
             return NextResponse.json(
-                { message: "All fields are required" },
+                { message: "All fields are required",
+                    ok: false
+                 },
                 { status: 400 }
             );
         }
 
         console.log("Checking existing email...");
         const response = await fetch(
-            `${BE_BASE_URL}/api/users?filters[email][$eq]=${email}`,
+            `${BACKEND_URL}/api/users?filters[email][$eq]=${email}`,
             {
                 method: "GET",
                 headers: {
@@ -34,7 +36,7 @@ export async function POST(req: Request) {
         }
 
         const resp = await fetch(
-            `${BE_BASE_URL}/api/auth/local/register`,
+            `${BACKEND_URL}/api/auth/local/register`,
             {
                 method: "POST",
                 headers: {
