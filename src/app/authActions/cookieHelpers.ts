@@ -9,12 +9,8 @@ export async function setAuthCookie(token: string) {
     httpOnly: true,
     path: '/',
     secure: process.env.NODE_ENV === 'production',
-    maxAge: 60 * 60 * 24 * 30, // 30 days
+    maxAge: 60 * 60 * 24,
   })
-}
-
-export async function getAuthCookie() {
-  return (await cookies()).get('strapi_jwt')?.value
 }
 
 export async function removeAuthCookie() {
