@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-const BACKEND_URL = process.env.BACKEND_URL;
+const NEXT_PUBLIC_BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
 export async function POST(req: Request) {
     try {
@@ -17,7 +17,7 @@ export async function POST(req: Request) {
 
         console.log("Checking existing email...");
         const response = await fetch(
-            `${BACKEND_URL}/api/users?filters[email][$eq]=${email}`,
+            `${NEXT_PUBLIC_BACKEND_URL}/api/users?filters[email][$eq]=${email}`,
             {
                 method: "GET",
                 headers: {
@@ -36,7 +36,7 @@ export async function POST(req: Request) {
         }
 
         const resp = await fetch(
-            `${BACKEND_URL}/api/auth/local/register`,
+            `${NEXT_PUBLIC_BACKEND_URL}/api/auth/local/register`,
             {
                 method: "POST",
                 headers: {
