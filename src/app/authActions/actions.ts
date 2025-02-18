@@ -7,9 +7,9 @@ interface LoginCredentials {
 
 export async function strapiCredentialLogin({ email, password }: LoginCredentials) {
   try {
-    const BACKEND_URL = process.env.BACKEND_URL || 'http://localhost:1337'
+    const NEXT_PUBLIC_BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:1337'
     
-    const response = await fetch(`${BACKEND_URL}/api/auth/local`, {
+    const response = await fetch(`${NEXT_PUBLIC_BACKEND_URL}/api/auth/local`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
