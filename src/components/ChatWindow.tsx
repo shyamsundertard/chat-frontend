@@ -94,7 +94,7 @@ const ChatWindow = ({ socket, userId, sessionId }: ChatWindowProps) => {
     }
 
     return (
-        <div className='flex-1 flex flex-col overflow-hidden h-full max-w-[1100px]'>
+        <div className='flex-1 flex flex-col overflow-hidden h-screen max-w-[1100px]'>
             <div className="px-4 py-3 border-b border-blue-400 bg-teal-400 flex items-center rounded-lg">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 flex justify-center items-center font-extrabold text-xl bg-blue-500 rounded-full mr-3 ml-6 sm:ml-0">
                 {capitalizeFirstLetter(sessionTitle)}
@@ -107,7 +107,7 @@ const ChatWindow = ({ socket, userId, sessionId }: ChatWindowProps) => {
 
                   <div
                     ref={messagesContainerRef}
-                    className="flex flex-col overflow-y-auto p-4 bg-gray-50"
+                    className="flex flex-col overflow-y-auto p-4 bg-gray-50 pb-[73px]"
                   >
                     {messages.map((message) => (
                       <div
@@ -140,31 +140,31 @@ const ChatWindow = ({ socket, userId, sessionId }: ChatWindowProps) => {
                       </div>
                     ))}
                   </div>
-                        <div className="p-2 border-t max-h-[200px] border-gray-200 rounded-lg mt-auto">
-                          <form onSubmit={handleSendMessage} className="flex space-x-2 h-full">
-                          <textarea
-                            ref={textAreaRef}
-                            value={newMessage}
-                            onChange={(e) => setNewMessage(e.target.value)}
-                            onKeyDown={(e) => {
-                              if (e.key === "Enter" && !e.shiftKey) {
-                                e.preventDefault();
-                                handleSendMessage(e);
-                              }
-                            }}
-                            placeholder="Type a message..."
-                            className="flex-1 bg-gray-100 rounded-3xl py-2 px-4 sm:py-4 sm:px-4 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none overflow-y-auto"
-                            rows={1}
-                            style={{ maxHeight: "144px", lineHeight: "24px" }}
-                            ></textarea>
-                            <button
-                              type="submit"
-                              className="text-white m-2"
-                            >
-                              <CiLocationArrow1 className="m-1 w-[19px] h-[22px] scale-[2] bg-blue-500 hover:bg-blue-600 rounded-full p-1" />
-                            </button>
-                          </form>
-                        </div>
+                    <div className="p-2 border-t max-h-[200px] border-gray-200 rounded-lg mt-auto fixed bottom-0 w-full sm:w-[1040px] bg-white">
+                      <form onSubmit={handleSendMessage} className="flex space-x-2 h-full">
+                      <textarea
+                        ref={textAreaRef}
+                        value={newMessage}
+                        onChange={(e) => setNewMessage(e.target.value)}
+                        onKeyDown={(e) => {
+                          if (e.key === "Enter" && !e.shiftKey) {
+                            e.preventDefault();
+                            handleSendMessage(e);
+                          }
+                        }}
+                        placeholder="Type a message..."
+                        className="flex-1 bg-gray-100 rounded-3xl py-2 px-4 sm:py-4 sm:px-4 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none overflow-y-auto"
+                        rows={1}
+                        style={{ maxHeight: "144px", lineHeight: "24px" }}
+                        ></textarea>
+                        <button
+                          type="submit"
+                          className="text-white m-2"
+                        >
+                          <CiLocationArrow1 className="m-1 w-[19px] h-[22px] scale-[2] bg-blue-500 hover:bg-blue-600 rounded-full p-1" />
+                        </button>
+                      </form>
+                    </div>
             </div>
     );
 }

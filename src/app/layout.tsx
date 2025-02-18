@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Strapi chat-web",
+  title: "QuickPing",
   description: "Seamless real-time chat with secure messaging and lightning-fast connectivity",
   icons: {
     icon: '/favicon.ico'

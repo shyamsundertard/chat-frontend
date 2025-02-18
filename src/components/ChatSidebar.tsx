@@ -172,7 +172,7 @@ const Sidebar = ({ userId, socket, onSessionSelect }: SidebarProps) => {
         </div>
       )}
 
-      <div className="flex-1 overflow-y-auto">
+      <div className="flex-1 overflow-y-auto pb-20">
         {chatSessions.map((session) => (
           <div
             key={session.id}
@@ -201,8 +201,7 @@ const Sidebar = ({ userId, socket, onSessionSelect }: SidebarProps) => {
           </div>
         ))}
       </div>
-
-      <div className="px-4 py-[10px] border-t border-gray-300 rounded-lg bg-gray-100">
+      <div className="px-4 py-[10px] border-t border-gray-300 bg-gray-100 fixed bottom-0 w-full sm:w-[400px]">
         <div className="flex items-center">
           <Image src="/Profile.jpeg" alt="QuickPing Logo" width={40} height={40} className="mr-2 rounded-full" />
           <div>

@@ -21,11 +21,11 @@ export default function QuickPingHome() {
             <a href="#testimonials" className="text-gray-600 hover:text-blue-500 transition">Testimonials</a>
           </div>
           <div className="flex items-center space-x-4">
-            <Link href="/auth/signin" className="text-blue-500 hover:text-blue-700 transition">
-              Log in
-            </Link>
-            <Link href="/register" className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full transition">
+            <Link href="/register" className="text-blue-500 hover:text-blue-700 transition hidden sm:block">
               Sign up
+            </Link>
+            <Link href="/auth/signin" className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full transition">
+              Log in
             </Link>
           </div>
         </div>
@@ -41,10 +41,10 @@ export default function QuickPingHome() {
               Fast, secure, and reliable messaging for teams and friends. Stay connected anywhere, anytime.
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-              <Link href="/signup" className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full text-center transition">
+              <Link href="/register" className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full text-center transition">
                 Get started for free
               </Link>
-              <Link href="/learn-more" className="border border-gray-300 text-gray-700 hover:bg-gray-50 px-6 py-3 rounded-full text-center transition">
+              <Link href="/QuickPing/pricing" className="border border-gray-300 text-gray-700 hover:bg-gray-50 px-6 py-3 rounded-full text-center transition">
                 Learn more
               </Link>
             </div>
