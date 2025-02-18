@@ -105,8 +105,8 @@ const Sidebar = ({ userId, socket, onSessionSelect }: SidebarProps) => {
   }
 
   return (
-    <div className="w-full sm:w-[400px] bg-white border-r-[2px] border-gray-200 h-screen flex flex-col rounded-lg">
-      <div className="p-4 border-b border-gray-200 flex items-center justify-between rounded-lg">
+    <div className="w-full sm:w-[400px] bg-white border-r-[1px] border-zinc-300 h-screen flex flex-col">
+      <div className="p-4 border-b border-gray-200 flex items-center justify-between rounded-b-lg">
         <div className="flex items-center">
           <Image src="/chat.svg" alt="Logo" width={40} height={40} className="mr-2 bg-blue-500 rounded-xl p-[6px] flex" />
           <h1 className="text-xl font-semibold">QuickPing</h1>
@@ -115,6 +115,7 @@ const Sidebar = ({ userId, socket, onSessionSelect }: SidebarProps) => {
           <CiMenuKebab size={25} style={{ strokeWidth: 1 }}/>
         </button>
       </div>
+
       <Toaster/>
 
       <div className="p-4 flex space-x-2">
@@ -176,7 +177,7 @@ const Sidebar = ({ userId, socket, onSessionSelect }: SidebarProps) => {
         {chatSessions.map((session) => (
           <div
             key={session.id}
-            className="p-4 border-b border-gray-200 hover:bg-gray-200 cursor-pointer bg-gray-100 rounded-md"
+            className="p-3 mb-[1px] border-y border-gray-200 hover:bg-gray-200 cursor-pointer bg-gray-100 rounded-r-lg"
             onClick={() => {
               if (socket) {
                 socket.emit('joinChatSession', { 
@@ -201,7 +202,7 @@ const Sidebar = ({ userId, socket, onSessionSelect }: SidebarProps) => {
           </div>
         ))}
       </div>
-      <div className="px-4 py-[10px] border-t border-gray-300 bg-gray-100 fixed bottom-0 w-full sm:w-[400px]">
+      <div className="px-4 py-[10px] border-t rounded-t-xl border-gray-300 bg-gray-100 fixed bottom-0 w-full sm:w-[400px]">
         <div className="flex items-center">
           <Image src="/Profile.jpeg" alt="QuickPing Logo" width={40} height={40} className="mr-2 rounded-full" />
           <div>
