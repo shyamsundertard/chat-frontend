@@ -41,7 +41,7 @@ const ChatPage = ({ userId }: { userId: number }) => {
   }, [isSmallScreen]);
 
   return (
-    <div className="flex h-screen w-full sm:max-w-[calc(100%-400px)] overflow-hidden bg-gradient-to-b from-blue-50 to-white">
+    <div className="flex h-screen w-full overflow-hidden bg-gradient-to-b from-blue-50 to-white">
       {(!isSmallScreen || activeComponent === "sidebar") && (
         <Sidebar
           userId={userId}
