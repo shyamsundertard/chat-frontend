@@ -27,8 +27,8 @@ const ChatPage = ({ userId }: { userId: number }) => {
     const socket = io(`${process.env.NEXT_PUBLIC_BACKEND_URL}`);
     setSocket(socket);
 
-    const handleSessionSelected = (data: { id: number }) => {
-      setSelectedSessionId(data.id);
+    const handleSessionSelected = (id: number) => {
+      setSelectedSessionId(id);
       if (isSmallScreen) setActiveComponent("chat");
     };
 
