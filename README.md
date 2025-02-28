@@ -3,7 +3,7 @@
 This is the frontend repository for a real-time chat application that communicates with a Strapi backend via WebSockets for instant messaging.
 
 ## Website: https://quick-ping.vercel.app/QuickPing
-## Dummy Account Credentials:
+### Dummy Account Credentials:
    - 📧 Email: user@quickping.com
    - 🔑 Password: user4qp
 
